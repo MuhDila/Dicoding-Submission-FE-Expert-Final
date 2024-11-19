@@ -1,5 +1,6 @@
 import RestaurantDbSource from '../../data/restaurantdb-source';
 import UrlParser from '../../routes/url-parser';
+import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const Detail = {
   async render() {
@@ -13,6 +14,14 @@ const Detail = {
     const restaurant = await RestaurantDbSource.detailRestaurant(url.id);
     const restaurantsContainer = document.querySelector('#resto-detail');
     restaurantsContainer.restoData = restaurant;
+
+    const likeButtonContainer = restaurantsContainer.shadowRoot.querySelector('#likeButtonContainer');
+    console.log(likeButtonContainer);
+
+    LikeButtonInitiator.init({
+      likeButtonContainer: likeButtonContainer,
+      restaurant: restaurant,
+    });
   },
 };
 

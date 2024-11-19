@@ -19,8 +19,6 @@ class App {
       drawer: this._drawer,
       content: this._content,
     });
-
-    // kita bisa menginisiasikan komponen lain bila ada
   }
 
   async renderPage() {

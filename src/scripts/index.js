@@ -2,6 +2,7 @@ import 'regenerator-runtime';
 import '../styles/main.scss';
 import './view/component/index-component.js';
 import App from './view/app.js';
+import swRegister from './utils/sw-register';
 
 const restoAppBar = document.querySelector('#appBar');
 
@@ -18,4 +19,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
+  swRegister();
 });

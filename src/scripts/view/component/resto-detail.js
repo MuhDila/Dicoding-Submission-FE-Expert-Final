@@ -9,7 +9,13 @@ class RestoDetail extends HTMLElement {
     description: null,
     pictureId: null,
     city: null,
-    rating: null
+    address: null,
+    rating: null,
+    menus: {
+      foods: [],
+      drinks: [],
+    },
+    customerReviews: [],
   };
 
   constructor() {
@@ -53,16 +59,6 @@ class RestoDetail extends HTMLElement {
         margin: 16px auto;
       }
 
-      button#close {
-        background: none;
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
-        position: absolute;
-        right: 20px;
-        top: 20px;
-      }
-
       .image-container {
         position: relative;
         max-width: 100%;
@@ -84,7 +80,22 @@ class RestoDetail extends HTMLElement {
         background-color: rgba(0, 0, 0, 0.6);
         color: #FFD700;
       }
-
+      
+      button {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        display: inline-block;
+        border-radius: 4px;
+        padding: 8px 16px;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #FFD700;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
       .rating {
         margin: 0;
       }
@@ -194,8 +205,12 @@ class RestoDetail extends HTMLElement {
         <article id="detailResto">
           <div class="image-container">
             <img src="${CONFIG.BASE_IMAGE_URL_MEDIUM + this._resto.pictureId}" alt="Resto ${this._resto.name}">
+            <button aria-label="like this movie" id="likeButton" class="like">
+              <img src="./images/heros/heart.svg" alt="Drink Icon"">
+            </button>
             <div class="info-container">
-            <p class="rating">${filledStars}${emptyStars} (${this._resto.rating}) di ${this._resto.city}</p>
+                <p class="rating">${filledStars}${emptyStars} (${this._resto.rating}) di ${this._resto.city} - ${this._resto.address}</p>
+                <div id="likeButtonContainer"></div>
             </div>
           </div>
           <h3>${this._resto.name}</h3>
