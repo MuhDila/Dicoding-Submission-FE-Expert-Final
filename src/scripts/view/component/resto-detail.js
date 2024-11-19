@@ -206,7 +206,7 @@ class RestoDetail extends HTMLElement {
           <div class="image-container">
             <img src="${CONFIG.BASE_IMAGE_URL_MEDIUM + this._resto.pictureId}" alt="Resto ${this._resto.name}">
             <button aria-label="like this movie" id="likeButton" class="like">
-              <img src="./images/heros/heart.svg" alt="Drink Icon"">
+              
             </button>
             <div class="info-container">
                 <p class="rating">${filledStars}${emptyStars} (${this._resto.rating}) di ${this._resto.city} - ${this._resto.address}</p>

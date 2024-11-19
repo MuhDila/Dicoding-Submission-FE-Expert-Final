@@ -25,12 +25,10 @@ const LikeButtonInitiator = {
 
   _renderLike() {
     this._likeButtonContainer.innerHTML = `
-    <button id="likeButton" class="like-button">
-      <span>Like</span>
-    </button>
+    <img src="./images/heros/heart.svg" alt="Icon Like" id="imgButton">
   `;
 
-    const likeButton = this._likeButtonContainer.querySelector('#likeButton');  // Query inside the shadow DOM
+    const likeButton = this._likeButtonContainer.querySelector('#imgButton');  // Query inside the shadow DOM
     if (likeButton) {
       likeButton.addEventListener('click', async () => {
         await FavoriteRestaurantIdb.putRestaurant(this._restaurant);
@@ -43,12 +41,10 @@ const LikeButtonInitiator = {
 
   _renderLiked() {
     this._likeButtonContainer.innerHTML = `
-    <button id="likeButton" class="liked-button">
-      <span>Liked</span>
-    </button>
+    <img src="./images/heros/heart-filled.svg" alt="Icon Liked" id="imgButton">
   `;
 
-    const likeButton = this._likeButtonContainer.querySelector('#likeButton');  // Query inside the shadow DOM
+    const likeButton = this._likeButtonContainer.querySelector('#imgButton');  // Query inside the shadow DOM
     if (likeButton) {
       likeButton.addEventListener('click', async () => {
         await FavoriteRestaurantIdb.deleteRestaurant(this._restaurant.id);

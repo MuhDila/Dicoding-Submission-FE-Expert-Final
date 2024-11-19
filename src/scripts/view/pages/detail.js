@@ -15,7 +15,7 @@ const Detail = {
     const restaurantsContainer = document.querySelector('#resto-detail');
     restaurantsContainer.restoData = restaurant;
 
-    const likeButtonContainer = restaurantsContainer.shadowRoot.querySelector('#likeButtonContainer');
+    const likeButtonContainer = restaurantsContainer.shadowRoot.querySelector('#likeButton');
     console.log(likeButtonContainer);
 
     LikeButtonInitiator.init({
