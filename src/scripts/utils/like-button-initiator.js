@@ -2,7 +2,7 @@ import FavoriteRestaurantIdb from '../data/favorite-restaurant-idb';
 
 const LikeButtonInitiator = {
   async init({ likeButtonContainer, restaurant }) {
-    this._likeButtonContainer = likeButtonContainer.shadowRoot || likeButtonContainer;  // Adjust if you're using shadowRoot
+    this._likeButtonContainer = likeButtonContainer.shadowRoot || likeButtonContainer;
     this._restaurant = restaurant;
 
     await this._renderButton();
@@ -25,34 +25,26 @@ const LikeButtonInitiator = {
 
   _renderLike() {
     this._likeButtonContainer.innerHTML = `
-    <img src="./images/heros/heart.svg" alt="Icon Like" id="imgButton">
-  `;
+      <img src="./images/heros/heart.svg" alt="Icon Like" id="imgButton">
+    `;
 
-    const likeButton = this._likeButtonContainer.querySelector('#imgButton');  // Query inside the shadow DOM
-    if (likeButton) {
-      likeButton.addEventListener('click', async () => {
-        await FavoriteRestaurantIdb.putRestaurant(this._restaurant);
-        this._renderButton();
-      });
-    } else {
-      console.error('Like button not found!');
-    }
+    const likeButton = this._likeButtonContainer.querySelector('#imgButton');
+    likeButton.addEventListener('click', async () => {
+      await FavoriteRestaurantIdb.putRestaurant(this._restaurant);
+      this._renderButton();
+    });
   },
 
   _renderLiked() {
     this._likeButtonContainer.innerHTML = `
-    <img src="./images/heros/heart-filled.svg" alt="Icon Liked" id="imgButton">
-  `;
+      <img src="./images/heros/heart-filled.svg" alt="Icon Liked" id="imgButton">
+    `;
 
-    const likeButton = this._likeButtonContainer.querySelector('#imgButton');  // Query inside the shadow DOM
-    if (likeButton) {
-      likeButton.addEventListener('click', async () => {
-        await FavoriteRestaurantIdb.deleteRestaurant(this._restaurant.id);
-        this._renderButton();
-      });
-    } else {
-      console.error('Liked button not found!');
-    }
+    const likeButton = this._likeButtonContainer.querySelector('#imgButton');
+    likeButton.addEventListener('click', async () => {
+      await FavoriteRestaurantIdb.deleteRestaurant(this._restaurant.id);
+      this._renderButton();
+    });
   }
 };
 

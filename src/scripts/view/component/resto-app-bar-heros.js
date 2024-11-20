@@ -92,8 +92,8 @@ class RestoAppBarHeros extends HTMLElement {
     this._shadowRoot.innerHTML += `  
       <div id="content-header">
         <article class="header-intro">
-          <h1>Selamat Datang di Kedai Resto Gatau Bingung</h1>
-          <p>Restoran yang menghadirkan pengalaman penuh kejutan, di mana setiap hidangan membawa petualangan rasa yang tak terduga.</p>
+          <h1 id="headerTitle">Selamat Datang di Kedai Resto Gatau Bingung</h1>
+          <p id="headerDesc" Restoran yang menghadirkan pengalaman penuh kejutan, di mana setiap hidangan membawa petualangan rasa yang tak terduga.</p>
         </article>
       </div>    
     `;

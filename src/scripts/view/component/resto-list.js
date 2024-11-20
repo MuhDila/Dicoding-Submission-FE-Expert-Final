@@ -73,7 +73,7 @@ class RestoList extends HTMLElement {
     this._shadowRoot.appendChild(this._style);
     this._shadowRoot.innerHTML += `
       <div class="list">
-        <h2>Jelajahi Kedai Resto Kami</h2>
+        <h2 id="titleList">Jelajahi Kedai Resto Kami</h2>
         <slot></slot>
       </div>
     `;

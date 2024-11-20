@@ -145,7 +145,7 @@ class RestoAppBar extends HTMLElement {
           <button id="hamburger">☰</button>
           <ul id="drawerComponent">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Favorite</a></li>
+            <li><a href="/#/favorite/">Favorite</a></li>
             <li><a href="https://www.linkedin.com/in/muhammaddila/">About Us</a></li>
           </ul>
           <button id="close">🗙</button>
