@@ -12,6 +12,8 @@ class RestoFooter extends HTMLElement {
   _updateStyle() {
     this._style.textContent = `
       div {
+        bottom: 0;
+        width: 100%;
         margin-top: 32px;
         text-align: center;
         background-color: black;

@@ -5,3 +5,4 @@ import './resto-list.js';
 import './resto-item.js';
 import './resto-footer.js';
 import './resto-detail.js';
+import './resto-loading.js';
