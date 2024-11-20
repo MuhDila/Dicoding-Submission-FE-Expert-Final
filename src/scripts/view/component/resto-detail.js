@@ -51,6 +51,11 @@ class RestoDetail extends HTMLElement {
         position: relative;
       }
 
+      #imgResto {
+        width: 100%;
+        border-radius: 8px;
+      }
+
       h3 {
         margin: 16px auto;
       }
@@ -64,12 +69,6 @@ class RestoDetail extends HTMLElement {
         max-width: 100%;
       }
 
-      img {
-        border-radius: 16px;
-        width: 100%;
-        display: block;
-      }
-
       .info-container {
         position: absolute;
         bottom: 8px;
@@ -81,7 +80,9 @@ class RestoDetail extends HTMLElement {
         color: #FFD700;
       }
       
-      button {
+      #likeButton {
+        min-width: 44px;
+        min-height: 44px;
         position: absolute;
         bottom: 8px;
         right: 8px;
@@ -124,8 +125,43 @@ class RestoDetail extends HTMLElement {
         margin-right: 8px;
       }
       
-      li:hover {
+      #hrReview {
+        margin: 16px 0 0 0;
+      }
+      
+      #reviewTitle {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+      }
+      
+      #reviewTitle h3 {
+        margin: 16px 0;
+      }
+      
+      #buttonComment:hover {
         cursor: pointer;
+      }
+      
+      #buttonComment {
+        min-width: 44px;
+        min-height: 44px;
+        margin: 0;
+        padding: 0;
+        background: none;
+        border: none;
+        outline: none;
+        box-shadow: none;
+      }
+      
+      #buttonComment img {
+        margin-top: 2px;
+        width: 22px;
+        height: 22px;
+      }
+      
+      li:hover {
         transform: translateY(-4px);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       }
@@ -148,7 +184,6 @@ class RestoDetail extends HTMLElement {
       }
       
       .review-card:hover {
-        cursor: pointer;
         transform: translateY(-4px);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       }
@@ -204,7 +239,7 @@ class RestoDetail extends HTMLElement {
       <div id="resto-detail">
         <article id="detailResto">
           <div class="image-container">
-            <img src="${CONFIG.BASE_IMAGE_URL_MEDIUM + this._resto.pictureId}" alt="Resto ${this._resto.name}">
+            <img id="imgResto" src="${CONFIG.BASE_IMAGE_URL_MEDIUM + this._resto.pictureId}" alt="Resto ${this._resto.name}">
             <button aria-label="like this movie" id="likeButton" class="like">
               
             </button>
@@ -229,13 +264,18 @@ class RestoDetail extends HTMLElement {
             ${drinkList}
           </ul>
         </article>
-        <hr>
+        <hr id="hrReview">
         <article id="customerReviews">
-        <h3>Customer Reviews</h3>
-        <div class="customer-reviews">
-          ${customerReviews}
-        </div>
-      </article>
+          <div id="reviewTitle">
+            <h3>Customer Reviews</h3>
+            <button id="buttonComment">
+              <img src="./images/heros/message-plus.svg" alt="Icon Comment">
+            </button>
+          </div>
+          <div class="customer-reviews">
+            ${customerReviews}
+          </div>
+        </article>
       </div>
     `;
   }

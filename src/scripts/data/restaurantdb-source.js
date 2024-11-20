@@ -13,6 +13,28 @@ class RestaurantDbSource {
     return responseJson.restaurant;
   }
 
+  static async submitReview({ id, name, review }) {
+    const response = await fetch(API_ENDPOINT.REVIEW, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        id,
+        name,
+        review,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to submit review');
+    }
+
+    const responseJson = await response.json();
+
+    console.log(responseJson.message);
+    return responseJson.message;
+  }
 }
 
 export default RestaurantDbSource;

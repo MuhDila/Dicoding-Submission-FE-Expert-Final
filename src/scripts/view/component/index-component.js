@@ -6,3 +6,4 @@ import './resto-item.js';
 import './resto-footer.js';
 import './resto-detail.js';
 import './resto-loading.js';
+import './resto-review-form.js';
