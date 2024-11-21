@@ -155,6 +155,11 @@ class RestoDetail extends HTMLElement {
         box-shadow: none;
       }
       
+      #buttonComment:focus {
+        border-radius: 8px;
+        border: black 1px solid;
+      }
+      
       #buttonComment img {
         margin-top: 2px;
         width: 22px;

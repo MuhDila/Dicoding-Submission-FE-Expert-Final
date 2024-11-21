@@ -26,7 +26,6 @@ const Detail = {
       const url = UrlParser.parseActiveUrlWithoutCombiner();
       const restaurant = await RestaurantDbSource.detailRestaurant(url.id);
 
-      // Set the restaurant ID for the review form
       reviewFormElement.setAttribute('data-restaurant-id', url.id);
 
       setTimeout(() => {

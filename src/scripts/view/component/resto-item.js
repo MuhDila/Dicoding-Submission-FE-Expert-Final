@@ -33,86 +33,90 @@ class RestoItem extends HTMLElement {
 
   _updateStyle() {
     this._style.textContent = `
-      * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
-      
-      article {
-        border-radius: 8px;
-        border: 1px solid black;
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-        background-color: #FFFFFF;
-        overflow: hidden;
-        transition: transform 0.2s ease-in-out;
-        background-color: floralwhite;
-      }
-      
-      article:hover, article:focus {
-        cursor: pointer;
-        transform: scale(1.01) translateY(-5px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      }
-      
-      .image-container {
-        position: relative;
-        max-width: 100%;
-      }
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    
+    article {
+      border-radius: 8px;
+      border: 1px solid black;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+      background-color: #FFFFFF;
+      overflow: hidden;
+      transition: transform 0.2s ease-in-out;
+      background-color: floralwhite;
+    }
+    
+    article:hover, article:focus {
+      cursor: pointer;
+      transform: scale(1.01) translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .image-container {
+      position: relative;
+      max-width: 100%;
+    }
 
-      img {
-        width: 100%;
-        display: block;
-        border-bottom: 1px solid #ddd;
-      }
-      
-      .rating {
-        position: absolute;
-        bottom: 8px;
-        left: 8px;
-        background-color: rgba(0, 0, 0, 0.6);
-        color: #FFD700;
-        font-size: 1em;
-        padding: 4px 8px;
-        margin: 0;
-        border-radius: 4px;
-      }
+    img {
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .rating {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #FFD700;
+      font-size: 1em;
+      padding: 4px 8px;
+      margin: 0;
+      border-radius: 4px;
+    }
 
-      span, .city {
-        display: block;
-        text-align: justify;
-        opacity: 80%;
-        padding: 0 16px;
-      }
-      
-      h3 {
-        text-align: justify;
-        margin-top: 8px;
-        padding: 0 16px;
-      }
-      
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-      
-      a:hover {
-        text-decoration: underline;
-      }
-      
-      p {
-        text-align: justify;
-        padding: 0 16px;
-        margin-bottom: 16px;
-        margin-top: 8px;
-        max-height: calc(5 * 1.5em);
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 5;
-        line-height: 22px;
-      }
-    `;
+    span, .city {
+      display: block;
+      text-align: justify;
+      opacity: 80%;
+      padding: 0 16px;
+    }
+    
+    h3 {
+      text-align: justify;
+      margin-top: 8px;
+      padding: 0 16px;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+      display: inline-block;
+      min-width: 44px;  /* Set min width */
+      min-height: 44px; /* Set min height */
+      line-height: 44px; /* Vertically center text */
+    }
+    
+    a:hover {
+      text-decoration: underline;
+    }
+    
+    p {
+      text-align: justify;
+      padding: 0 16px;
+      margin-bottom: 16px;
+      margin-top: 8px;
+      max-height: calc(5 * 1.5em);
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+      line-height: 22px;
+    }
+  `;
   }
 
   render() {

@@ -28,7 +28,7 @@ const LikeButtonInitiator = {
       <img src="./images/heros/heart.svg" alt="Icon Like" id="imgButton">
     `;
 
-    const likeButton = this._likeButtonContainer.querySelector('#imgButton');
+    const likeButton = this._likeButtonContainer;
     likeButton.addEventListener('click', async () => {
       await FavoriteRestaurantIdb.putRestaurant(this._restaurant);
       this._renderButton();
@@ -40,7 +40,7 @@ const LikeButtonInitiator = {
       <img src="./images/heros/heart-filled.svg" alt="Icon Liked" id="imgButton">
     `;
 
-    const likeButton = this._likeButtonContainer.querySelector('#imgButton');
+    const likeButton = this._likeButtonContainer;
     likeButton.addEventListener('click', async () => {
       await FavoriteRestaurantIdb.deleteRestaurant(this._restaurant.id);
       this._renderButton();
