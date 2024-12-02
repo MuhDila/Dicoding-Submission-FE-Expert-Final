@@ -132,7 +132,7 @@ class RestoItem extends HTMLElement {
       <div class="content-resto">
         <article tabindex="0">
           <div class="image-container">
-            <img src="${CONFIG.BASE_IMAGE_URL.SMALL + this._resto.pictureId}" alt="Resto ${this._resto.name}">
+            <img src="${CONFIG.BASE_IMAGE_URL.SMALL + this._resto.pictureId}" class="lazyload" loading="lazy" alt="Resto ${this._resto.name}">
             <p class="rating">${filledStars}${emptyStars} (${this._resto.rating}) di ${this._resto.city}</p>
           </div>
           <h3><a href="/#/detail/${this._resto.id}">${this._resto.name}</a></h3>
