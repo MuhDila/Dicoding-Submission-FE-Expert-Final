@@ -26,12 +26,14 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      # Step 4: Build the app with timeout
+      # Step 4: Build the app with timeout and move to next step
       - name: Build the app
         run: |
-          timeout 120 npm run build
+          timeout 90s npm run build &
+          wait $!
         env:
           CI: true
+
 
       # Step 5: Build images
       - name: Build images
