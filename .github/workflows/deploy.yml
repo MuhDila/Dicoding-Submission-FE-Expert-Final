@@ -28,7 +28,7 @@ jobs:
       - name: Build the app
         run: npm run build
         env:
-          CI: false
+          CI: true
 
       # Step 5: Build images
       - name: Build images
