@@ -71,6 +71,10 @@ class RestoAppBar extends HTMLElement {
         justify-content: center;
         align-items: center;
       }
+      
+      img {
+        max-height: 28px;
+      }
 
       @media screen and (max-width: 760px) {
         nav {
@@ -141,7 +145,10 @@ class RestoAppBar extends HTMLElement {
     this._shadowRoot.innerHTML += `  
       <div id="content-header">
         <nav id="drawer">
-          <img class="icon-logo" src="./images/heros/logo-brand.svg" alt="Brand Logo">
+          <picture>
+            <source media="(max-width: 600px)" srcset="./images/logo-brand-small.jpg">
+            <img src="./images/logo-brand-large.jpg" alt="Brand Logo">
+          </picture>
           <button id="hamburger">☰</button>
           <ul id="drawerComponent">
             <li><a href="#">Home</a></li>

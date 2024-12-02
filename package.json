@@ -8,7 +8,8 @@
     "build": "webpack --config webpack.prod.js",
     "serve": "http-server dist",
     "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "build-image": "node sharp.js"
   },
   "keywords": [],
   "author": "your_name <your.email@domain.com>",
@@ -36,8 +37,10 @@
     "mini-css-extract-plugin": "^2.9.2",
     "sass": "^1.81.0",
     "sass-loader": "^16.0.3",
+    "sharp": "^0.33.5",
     "style-loader": "^4.0.0",
     "webpack": "^5.96.1",
+    "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.1.0",
     "webpack-merge": "^6.0.1",
@@ -45,6 +48,7 @@
   },
   "dependencies": {
     "idb": "^8.0.0",
+    "punycode": "^2.3.1",
     "regenerator-runtime": "^0.14.1",
     "sweetalert2": "^11.14.5",
     "workbox-webpack-plugin": "^7.3.0",

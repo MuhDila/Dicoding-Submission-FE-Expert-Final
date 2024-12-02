@@ -96,7 +96,10 @@ class RestoOpening extends HTMLElement {
       <div id="content-opening">
         <article>
           <h2>Kenali Resto Kedai Kami</h2>
-          <img src="./images/heros/hero-image_1.jpg" alt="Brand Resto">
+          <picture>
+            <source media="(max-width: 600px)" srcset="./images/hero-image_1-small.jpg">
+            <img src="./images/hero-image_1-large.jpg" alt="Brand Resto">
+          </picture>
           <p>
             Kedai Resto Gatau Bingung adalah destinasi kuliner yang
             berkomitmen untuk memberikan pengalaman makan yang luar

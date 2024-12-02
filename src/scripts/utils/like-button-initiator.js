@@ -19,13 +19,13 @@ const LikeButtonInitiator = {
   },
 
   async _isRestaurantExist(id) {
-    const movie = await FavoriteRestaurantIdb.getRestaurant(id);
-    return !!movie;
+    const restaurant = await FavoriteRestaurantIdb.getRestaurant(id);
+    return !!restaurant;
   },
 
   _renderLike() {
     this._likeButtonContainer.innerHTML = `
-      <img src="./images/heros/heart.svg" alt="Icon Like" id="imgButton">
+      <img src="./svg/heart.svg" alt="Icon Like" id="imgButton" aria-label="like this restaurant">
     `;
 
     const likeButton = this._likeButtonContainer;
@@ -37,7 +37,7 @@ const LikeButtonInitiator = {
 
   _renderLiked() {
     this._likeButtonContainer.innerHTML = `
-      <img src="./images/heros/heart-filled.svg" alt="Icon Liked" id="imgButton">
+      <img src="./svg/heart-filled.svg" alt="Icon Liked" id="imgButton" aria-label="unlike this restaurant">
     `;
 
     const likeButton = this._likeButtonContainer;

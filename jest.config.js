@@ -9,17 +9,16 @@ const config = {
     '**/tests/**/*.test.[jt]s?(x)',
   ],
 
-  // The paths to modules that run some code to configure or set up the testing environment before each test
-  setupFiles: ['fake-indexeddb/auto'],
+  setupFiles: [
+    'fake-indexeddb/auto', // Initializes fake-indexeddb
+    './jest.setup.js' // Include the jest.setup.js file for polyfill
+  ],
 
-  // The test environment that will be used for testing
   testEnvironment: 'jsdom',
 
-  // A map from regular expressions to paths to transformers
   transform: {
     '^.+\\.(js|ts)$': 'babel-jest',
   },
 };
 
-// eslint-disable-next-line no-undef
 module.exports = config;

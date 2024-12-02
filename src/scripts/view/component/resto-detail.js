@@ -232,7 +232,7 @@ class RestoDetail extends HTMLElement {
     const filledStars = '★'.repeat(Math.floor(this._resto.rating));
     const emptyStars = '☆'.repeat(maxRating - Math.floor(this._resto.rating));
 
-    const placeholderImageFood = './images/heros/paper-bag.svg';
+    const placeholderImageFood = './svg/paper-bag.svg';
     const foodList = this._resto.menus?.foods ? this._resto.menus.foods.map(
       (food) =>
         `<li>
@@ -241,7 +241,7 @@ class RestoDetail extends HTMLElement {
         </li>`
     ).join('') : '<li>No food available</li>';
 
-    const placeholderImageDrink = './images/heros/cup.svg';
+    const placeholderImageDrink = './svg/cup.svg';
     const drinkList = this._resto.menus?.drinks ? this._resto.menus.drinks.map(
       (drink) =>
         `<li>
@@ -265,12 +265,11 @@ class RestoDetail extends HTMLElement {
         <article id="detailResto">
           <div class="image-container">
             <img id="imgResto" src="${CONFIG.BASE_IMAGE_URL.SMALL + this._resto.pictureId}" alt="Resto ${this._resto.name}">
-            <button aria-label="like this movie" id="likeButton" class="like">
+            <button id="likeButton" class="like">
               
             </button>
             <div class="info-container">
                 <p class="rating">${filledStars}${emptyStars} (${this._resto.rating}) di ${this._resto.city} - ${this._resto.address}</p>
-                <div id="likeButtonContainer"></div>
             </div>
           </div>
           <h3>${this._resto.name}</h3>
