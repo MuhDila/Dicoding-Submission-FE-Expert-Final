@@ -26,11 +26,10 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      # Step 4: Build the app with verbose logging
+      # Step 4: Build the app with timeout
       - name: Build the app
         run: |
-          npm ci
-          npm run build
+          timeout 120 npm run build
         env:
           CI: true
 
