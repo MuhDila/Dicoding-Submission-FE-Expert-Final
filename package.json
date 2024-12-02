@@ -13,16 +13,10 @@
   "keywords": [],
   "author": "your_name <your.email@domain.com>",
   "license": "ISC",
-  "dependencies": {
-    "idb": "^8.0.0",
-    "regenerator-runtime": "^0.14.1",
-    "sweetalert2": "^11.14.5",
-    "workbox-window": "^7.3.0"
-  },
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
-    "@eslint/js": "^9.15.0",
+    "@eslint/js": "^9.16.0",
     "@jest/globals": "^29.7.0",
     "@types/jest": "^29.5.14",
     "babel-jest": "^29.7.0",
@@ -30,14 +24,16 @@
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^7.1.2",
-    "eslint": "^9.15.0",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "eslint": "^9.16.0",
     "eslint-config-dicodingacademy": "^0.9.4",
     "fake-indexeddb": "^6.0.0",
-    "globals": "^15.12.0",
+    "globals": "^15.13.0",
     "html-webpack-plugin": "^5.6.3",
     "http-server": "^14.1.1",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "mini-css-extract-plugin": "^2.9.2",
     "sass": "^1.81.0",
     "sass-loader": "^16.0.3",
     "style-loader": "^4.0.0",
@@ -46,5 +42,12 @@
     "webpack-dev-server": "^5.1.0",
     "webpack-merge": "^6.0.1",
     "whatwg-fetch": "^3.6.20"
+  },
+  "dependencies": {
+    "idb": "^8.0.0",
+    "regenerator-runtime": "^0.14.1",
+    "sweetalert2": "^11.14.5",
+    "workbox-webpack-plugin": "^7.3.0",
+    "workbox-window": "^7.3.0"
   }
 }

@@ -4,16 +4,17 @@ import Swal from 'sweetalert2';
 const ListRestaurants = {
   async render() {
     return `
+      <a href="#listRestaurantsList" class="skip-link" tabindex="1">Menuju ke konten</a>
       <resto-app-bar-heros></resto-app-bar-heros>
       <resto-opening></resto-opening>
-      <resto-loading id="restoLoading"></resto-loading>    
-      <resto-list id="restoList" style="display: none;"></resto-list>
+      <resto-loading id="restoLoading"></resto-loading>
+      <resto-list id="listRestaurantsList" style="display: none;"></resto-list>
     `;
   },
 
   async afterRender() {
     const loadingElement = document.querySelector('#restoLoading');
-    const restaurantsContainer = document.querySelector('#restoList');
+    const restaurantsContainer = document.querySelector('#listRestaurantsList');
 
     try {
       loadingElement.style.display = 'block';

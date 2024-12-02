@@ -43,10 +43,10 @@ class RestoDetail extends HTMLElement {
     
       #resto-detail {
         background-color: #fff;
-        margin: 32px auto;
+        margin: 82px auto;
         padding: 20px;
         border: 1px solid #888;
-        width: 80%;
+        width: 90%;
         border-radius: 16px;
         position: relative;
       }
@@ -202,6 +202,26 @@ class RestoDetail extends HTMLElement {
       .review-card h4 {
         margin-bottom: 8px;
       }
+      
+      @media screen and (max-width: 545px) {
+        .image-container {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        #likeButton {
+          position: static;
+          align-self: center;
+          margin-bottom: 8px;
+        }
+  
+        .info-container {
+          position: static;
+          width: 100%;
+          text-align: center;
+        }
+      }
     `;
   }
 
@@ -244,7 +264,7 @@ class RestoDetail extends HTMLElement {
       <div id="resto-detail">
         <article id="detailResto">
           <div class="image-container">
-            <img id="imgResto" src="${CONFIG.BASE_IMAGE_URL_MEDIUM + this._resto.pictureId}" alt="Resto ${this._resto.name}">
+            <img id="imgResto" src="${CONFIG.BASE_IMAGE_URL.SMALL + this._resto.pictureId}" alt="Resto ${this._resto.name}">
             <button aria-label="like this movie" id="likeButton" class="like">
               
             </button>

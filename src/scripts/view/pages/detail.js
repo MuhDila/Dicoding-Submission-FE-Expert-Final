@@ -7,6 +7,9 @@ import OpenReviewFormInitiator from '../../utils/comment-button-initiator';
 const Detail = {
   async render() {
     return `
+      <!-- Skip to content link -->
+      <a href="#restoDetail" class="skip-link" tabindex="1">Skip to content</a>
+
       <resto-review-form id="restoReviewForm"></resto-review-form>
       <resto-loading id="restoLoading"></resto-loading>   
       <resto-detail id="restoDetail" style="display: none;"></resto-detail>
@@ -17,6 +20,15 @@ const Detail = {
     const loadingElement = document.querySelector('#restoLoading');
     const detailElement = document.querySelector('#restoDetail');
     const reviewFormElement = document.querySelector('#restoReviewForm');
+
+    const skipLink = document.querySelector('.skip-link');
+    skipLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      const restoDetail = document.querySelector('#restoDetail');
+      if (restoDetail) {
+        restoDetail.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
 
     try {
       loadingElement.style.display = 'block';
@@ -104,6 +116,7 @@ const Detail = {
 
         loadingElement.style.display = 'none';
         detailElement.style.display = 'block';
+
       }, 2000);
     } catch (error) {
       await Swal.fire({

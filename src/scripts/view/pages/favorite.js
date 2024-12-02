@@ -4,15 +4,31 @@ import Swal from 'sweetalert2';
 const Favorite = {
   async render() {
     return `
+      <a href="#restoListFavorite" class="skip-link" tabindex="1">Skip to content</a>
+
       <resto-app-bar-heros id="appBarHeros"></resto-app-bar-heros>
       <resto-loading id="restoLoading"></resto-loading>  
-      <resto-list id="restoList"></resto-list>
+      <resto-list id="restoListFavorite"></resto-list>
     `;
   },
 
   async afterRender() {
+    const appBar = document.querySelector('#appBar');
+    if (appBar) {
+      appBar.setAttribute('tabindex', '2');
+    }
+
+    const skipLink = document.querySelector('.skip-link');
+    skipLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      const restoListFavorite = document.querySelector('#restoListFavorite');
+      if (restoListFavorite) {
+        restoListFavorite.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+
     const loadingElement = document.querySelector('#restoLoading');
-    const restaurantsContainer = document.querySelector('#restoList');
+    const restaurantsContainer = document.querySelector('#restoListFavorite');
 
     const shadowRootHeros = document.querySelector('#appBarHeros');
     const headerTitle = shadowRootHeros.shadowRoot.querySelector('#headerTitle');

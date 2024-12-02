@@ -22,7 +22,7 @@ class RestoReviewForm extends HTMLElement {
 
       .dialog-content {
         background-color: #fff;
-        margin: 10% auto;
+        margin: 100px auto;
         padding: 20px;
         border: 1px solid #888;
         width: 80%;

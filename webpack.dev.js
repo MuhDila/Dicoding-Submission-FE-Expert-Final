@@ -13,7 +13,7 @@ module.exports = merge(common, {
     // eslint-disable-next-line no-undef
     static: path.resolve(__dirname, 'dist'),
     open: true,
-    port: 9000,
+    port: 9002,
     client: {
       overlay: {
         errors: true,
