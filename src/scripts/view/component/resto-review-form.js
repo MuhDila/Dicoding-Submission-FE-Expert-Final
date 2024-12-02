@@ -56,9 +56,16 @@ class RestoReviewForm extends HTMLElement {
         margin-top: 10px;
       }
 
+      input {
+        min-width: 44px;
+        min-height: 44px;
+      }
+
       input[type="text"],
       textarea {
         width: 98%;
+        min-width: 44px;
+        min-height: 44px;
         padding: 8px;
         margin-top: 8px;
         border: 1px solid #ccc;

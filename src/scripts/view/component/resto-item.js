@@ -123,6 +123,22 @@ class RestoItem extends HTMLElement {
     this._emptyContent();
     this._updateStyle();
 
+    if (!this._resto.name) {
+      this._shadowRoot.appendChild(this._style);
+      this._shadowRoot.innerHTML += `
+        <div class="content-resto">
+          <article tabindex="0">
+            <div class="image-container">
+              <div class="skeleton" style="width: 100%; height: 200px;"></div>
+              <div class="skeleton" style="width: 60%; height: 20px; margin-top: 10px;"></div>
+              <div class="skeleton" style="width: 80%; height: 20px; margin-top: 10px;"></div>
+            </div>
+          </article>
+        </div>
+      `;
+      return;
+    }
+
     const maxRating = 5;
     const filledStars = '★'.repeat(Math.floor(this._resto.rating));
     const emptyStars = '☆'.repeat(maxRating - Math.floor(this._resto.rating));
@@ -135,7 +151,7 @@ class RestoItem extends HTMLElement {
             <img src="${CONFIG.BASE_IMAGE_URL.SMALL + this._resto.pictureId}" class="lazyload" loading="lazy" alt="Resto ${this._resto.name}">
             <p class="rating">${filledStars}${emptyStars} (${this._resto.rating}) di ${this._resto.city}</p>
           </div>
-          <h3><a href="/#/detail/${this._resto.id}">${this._resto.name}</a></h3>
+          <h3 id="restoName"><a href="/#/detail/${this._resto.id}">${this._resto.name}</a></h3>
           <p>${this._resto.description}</p>
         </article>
       </div>
