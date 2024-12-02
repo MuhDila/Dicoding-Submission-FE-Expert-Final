@@ -16,9 +16,11 @@ jobs:
 
       # Step 2: Set up Node.js
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '16' # Adjust to match your local Node.js version
+          node-version: '21'
+          scope: '@recurate'
+          registry-url: 'https://npm.pkg.github.com'
 
       # Step 3: Install dependencies
       - name: Install dependencies
@@ -26,7 +28,9 @@ jobs:
 
       # Step 4: Build the app with verbose logging
       - name: Build the app
-        run: npm run build
+        run: |
+          npm ci
+          npm run build
         env:
           CI: true
 
