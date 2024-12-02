@@ -293,7 +293,7 @@ class RestoDetail extends HTMLElement {
           <div id="reviewTitle">
             <h3>Customer Reviews</h3>
             <button id="buttonComment">
-              <img src="./images/heros/message-plus.svg" alt="Icon Comment">
+              <img src="./svg/message-plus.svg" alt="Icon Comment">
             </button>
           </div>
           <div class="customer-reviews">

@@ -20,6 +20,10 @@ class RestoFooter extends HTMLElement {
         color: white;
         padding: 8px 0;
       }
+      
+      img {
+        max-height: 28px;
+      }
     `;
   }
 
@@ -31,7 +35,10 @@ class RestoFooter extends HTMLElement {
     this._shadowRoot.appendChild(this._style);
     this._shadowRoot.innerHTML += ` 
       <div>
-        <img src="./images/heros/logo-brand.svg" alt="Brand Logo Footer">
+        <picture>
+            <source media="(max-width: 600px)" srcset="./images/logo-brand-small.jpg">
+            <img src="./images/logo-brand-large.jpg" alt="Brand Logo">
+          </picture>
         <p>Create by Muhammad Dila, Dila was "Bingung" what he need to create, so Dila create "Gatau Bingung" so here
           "Gatau Bingung" website.</p>
         <p>Belajar Dasar Pemograman Web &#169; 2024, Dicoding Academy</p>
