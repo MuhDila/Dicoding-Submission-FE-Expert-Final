@@ -6,9 +6,6 @@ import swRegister from './utils/sw-register';
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
-const START = 10;
-const NUMBER_OF_IMAGES = 100;
-
 const restoAppBar = document.querySelector('#appBar');
 
 const app = new App({
@@ -16,6 +13,7 @@ const app = new App({
   buttonClosed: restoAppBar.shadowRoot.querySelector('#close'),
   drawer: restoAppBar.shadowRoot.querySelector('#drawer'),
   content: document.querySelector('#mainContent'),
+  logo: restoAppBar.shadowRoot.querySelector('#brand-logo'),
 });
 
 window.addEventListener('hashchange', () => {

@@ -71,10 +71,6 @@ class RestoAppBar extends HTMLElement {
         justify-content: center;
         align-items: center;
       }
-      
-      img {
-        max-height: 28px;
-      }
 
       @media screen and (max-width: 760px) {
         nav {
@@ -91,6 +87,18 @@ class RestoAppBar extends HTMLElement {
 
         nav ul, nav a {
           display: none;
+        }
+
+        #brand-logo {
+          transition: opacity 0.3s ease;
+        }
+        
+        #brand-logo.hidden {
+          display: none;
+        }
+        
+        #brand-logo.visible {
+          display: block;
         }
 
         .visible ul, nav ul a {
@@ -145,10 +153,7 @@ class RestoAppBar extends HTMLElement {
     this._shadowRoot.innerHTML += `  
       <div id="content-header">
         <nav id="drawer">
-          <picture>
-            <source media="(max-width: 600px)" srcset="./images/logo-brand-small.jpg">
-            <img src="./images/logo-brand-large.jpg" alt="Brand Logo">
-          </picture>
+          <img src="./svg/logo-brand.svg" alt="Brand Logo" id="brand-logo" class="logo-visible">
           <button id="hamburger">☰</button>
           <ul id="drawerComponent">
             <li><a href="#">Home</a></li>
